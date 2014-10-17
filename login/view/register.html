@@ -2,13 +2,30 @@
 <html>
 <head>
     <title>register</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ static_url("logincheck.css") }}">
 </head>
 <body>
-        <form method="post" action="/register">
-            <p>Email: <input  type="text" name="email"/></p>
-            <p>Password:<input type="password" name="password"/></p>
-            <p>Username:<input type="text" name="username"/></p>
-            <p><input type="submit" value="register"> <p>
+<div class="container">
+    {% if flag==1 %}
+        <form class="form-signin" role="form">
+            <input  type="text" name="email" class="email form-control" placeholder="Email" requried autofocus/>
+            <br>
+            <input type="password" name="password" class="password form-control" placeholder="password" />
+            <input type="text" name="username" class="username form-control" placeholder="name" required />
+            <br>
+            <a class="register btn btn-lg btn-primary btn-block">register</a>
         </form>
+
+    {% else %}
+         <div class="success">
+             <h3>yes,you're goodman,{{ username }} ,login success!!,</3>
+             <h3>your Email is {{ email }}</h3>
+        </div>
+{% end %}
+</div>
 </body>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ static_url("logincheck.js") }}"></script>
 </html>

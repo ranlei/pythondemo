@@ -2,15 +2,30 @@
 <html>
 <head>
     <title>login</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="{{ static_url("logincheck.css") }}">
 </head>
 <body>
-        <form method="post" action="/">
-            <p>Username:<input type="text" name="username" /></p>
-             <p>Password:<input type="password" name="password"/></p>
-            <p>
-                <input type="submit" name="submit" value="login">
-                <input type="submit" name="submit" value="register">
-            </p>
-        </form>
+<div class="container">
+    {% if flag==1 %}
+            <form onsubmit= "" class="form-signin" role="form" method="post" action="/">
+                <h3 class="form-signin-heading">Login</h3>
+                 <input type="text" name="username"  class="username form-control" placeholder="username" required autofocus />
+                 <input type="password" name="password" class="password form-control" placeholder="password" required />
+                 <div class="sub">
+                  <input type="submit" name="submit" value="login" class="login btn btn-lg btn-block btn-primary ">
+                 <h2><a href="/register">sign up</a></h2>
+                </div>
+            </form>
+    {% else %}
+            <div class="success">
+                 <h3>yes,you're goodman,{{ username }} ,login success!!,</h3>
+                 <h3>your Email is {{ email }}.</h3>
+            </div>
+    {% end %}
+</div>
 </body>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ static_url("logincheck.js") }}"></script>
 </html>
