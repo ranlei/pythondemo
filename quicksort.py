@@ -1,7 +1,5 @@
-"""This is demo of quicksort"""
-
 def quicksort(lists,left,right):
-    """Pivot point to start here""" 
+    """Pivot point to start here"""
     if left < right:
         i = left
         j = right
@@ -18,16 +16,16 @@ def quicksort(lists,left,right):
                 lists[j] = lists[i]
                 j -= 1
         lists[i] = key
-        quicksort(lists,left,i - 1)
-        quicksort(lists,i + 1,right)
-       
+        quicksort(lists,left,i-1)
+        quicksort(lists,i+1,right)
+        
 if __name__ == "__main__":
     lists = [5,4,3,2,1,0]
-    print lists
+    print (lists)
     quicksort(lists,0,len(lists)-1)
-    print lists
+    print (lists)
 
-        
+
 
 
 

@@ -1,11 +1,14 @@
-#/usr/bin/env/ python
+# /usr/bin/env/ python
+
 import math
+
+
 def sqrt(n, one):
     floating_point_precision = 10 ** 16
     n_float = float((n * floating_point_precision) // one) / \
-            floating_point_precision
+        floating_point_precision
     x = (int(floating_point_precision * math.sqrt(n_float)) * one) // \
-            floating_point_precision
+        floating_point_precision
     n_one = n * one
     while True:
         x_old = x
@@ -18,7 +21,7 @@ def sqrt(n, one):
 def pi_chudnovksy(one):
     k = 1
     a_k = one
-    a_tot = one 
+    a_tot = one
     b_tot = 0
     C = 640320
     C3_OVER_24 = C**3 // 24
@@ -41,20 +44,19 @@ def validate_nonnegative_integer():
         try:
             digits = int(s)
             if digits >= 10000:
-                print "Enter a number smaller than 10000."
+                print("Enter a number smaller than 10000.")
             elif digits > 0:
-                return digits 
+                return digits
             else:
-                print "Enter a nonnegative integer."
+                print("Enter a nonnegative integer.")
         except ValueError:
-            print "Enter a nonnegative integer."
+            print("Enter a nonnegative integer.")
 
 
 def main():
     digits = validate_nonnegative_integer()
     pi = str(pi_chudnovksy(10**(digits * 10)))[:digits]
-    print pi[0] + "." + pi[1:]
+    print(pi[0] + "." + pi[1:])
 
-    
 if __name__ == "__main__":
     main()
