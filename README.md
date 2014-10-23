@@ -4,7 +4,7 @@
 python有时候可以用来做很多小事情，这里就是一些小demo，用来体现python的强大。
 
 >
->[计算e](https://github.com/ranlei/pythondemo/blob/master/e.py)
+>[计算自然常数e](https://github.com/ranlei/pythondemo/blob/master/e.py)
 >
 >[计算器](https://github.com/ranlei/pythondemo/blob/master/cacl.py)
 >
